@@ -11,6 +11,18 @@ module CmChallenge
         load_file('members.json')
       end
 
+      def get_absence_list
+        list = []
+        absences().each do |absence|
+          members().each do |member|
+            if absence[:user_id] == member[:user_id]
+              list.push(absence.merge(member))
+            end
+          end
+        end
+        return list
+      end
+
       private
 
       def load_file(file_name)
@@ -26,6 +38,7 @@ module CmChallenge
       def symbolize_hash(hash)
         hash.each_with_object({}) { |(k, v), h| h[k.to_sym] = v; }
       end
+
     end
   end
 end
