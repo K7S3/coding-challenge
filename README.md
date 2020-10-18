@@ -2,7 +2,7 @@
 
 - I have implemented the backend(ruby) part of the coding challenge.
 - I have also built a rails app for the 3 bonus acceptance criteria. 
-- I have used the git version control to maintain the code. All the code was initially pushed to the ```develop``` branch and then later merged to master.
+- I have used the git version control to maintain the code. The ruby_backend code was initially pushed to the ```develop``` branch and then later merged to master. The rails-app was maintained in a separate repo(submodule) and was later merged to the develop branch.
 - The backend code along with the tests can be found in the ```ruby_edition``` directory. To run the tests type ```bundle exec rspec```.
 - The rails app can be found in the ```rails-app``` directory. Inside the directory, run the server using ```rails s``` and run the tests using ```bundle exec rspec```.
 - Since the rails-app contains mainly the standard boilerplate code, the main files to check are in ```app/models```, ```app/controllers``` and the tests in ```spec/```. 
@@ -19,14 +19,14 @@
 
  ## Features of Rails app
 
-1. Download the ical file for the absences of all employees by going to \
-[localhost:3000/](localhost:3000/).
+1. Download the ical file for the absences of all employees by going to 
+![localhost:3000/](localhost:3000/)
 2. Download the ical file for the absences of the particular employee given the userId. \
-[http://localhost:3000/?userId=644](http://localhost:3000/?userId=644)
+![http://localhost:3000/?userId=644](http://localhost:3000/?userId=644)
 3. Download the ical file for the absences of employees given the start and end dates. \
-[http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01](http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01)
+![http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01](http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01)
 4. Download the ics(ical version default) or vcs(Outlook version) file given the format. \
-[localhost:3000/?format=vcs](localhost:3000/?format=vcs)
+![localhost:3000/?format=vcs](localhost:3000/?format=vcs)
 
 
 ## Acceptance Criteria
