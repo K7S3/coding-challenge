@@ -1,4 +1,4 @@
-require_relative '../cm_challenge/api'
+require_relative '../app/models/api'
 
 RSpec.describe CmChallenge::Api do
   describe '#members' do
