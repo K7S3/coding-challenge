@@ -1,49 +1,33 @@
-# Crewmeister coding challenge 
+# Summary
 
-Hello and thanks in participating in the crewmeister coding challenge. This
-coding exercise will help us get a better feeling about your coding process.
+- I have implemented the backend(ruby) part of the coding challenge.
+- I have also built a rails app for the 3 bonus acceptance criteria. 
+- I have used the git version control to maintain the code. The ruby_backend code was initially pushed to the ```develop``` branch and then later merged to master. The rails-app was maintained in a separate repo(submodule) and was later merged to the develop branch.
+- The backend code along with the tests can be found in the ```ruby_edition``` directory. To run the tests type ```bundle exec rspec```.
+- The rails app can be found in the ```rails-app``` directory. Inside the directory, run the server using ```rails s``` and run the tests using ```bundle exec rspec```.
+- Since the rails-app contains mainly the standard boilerplate code, the main files to check are in ```app/models```, ```app/controllers``` and the tests in ```spec/```. 
+- Only the last bonus feature (of doing it in js)has not been implemented.
+- I have also implemented one extra feature:- Downloading the file in either vcs(Outlook version) or ics(ical version) format.
 
-If you have any questions, we're happy to help you. Just drop us an 
-email: challenge@crewmeister.com
+## Clean Code
+- Followed the clean code practices.
+- Used snake_case naming style for function names and CamelCase for class names. 
+- Variable names and function names are self-explanatory and appropriate comments are added when needed.
+- No function exceed 25 lines.
+- The code is indented with 2 spaces.
+- Modular code: Each class in separate file and test for each class in separate files.
 
-# Instructions
+ ## Features of Rails app
 
-Clone this repository and don't create a fork, so that other candidates 
-can't copy your solution. The repository contains a scaffold for frontend
-and backend candidates including a test setup and a mocked API. You're 
-free to use whatever tools you want to use. (eg. if you're more comfortable
-with a different assertion library feel free to add it).
+1. Download the ical file for the absences of all employees by going to 
+![localhost:3000/](localhost:3000/)
+2. Download the ical file for the absences of the particular employee given the userId. \
+![http://localhost:3000/?userId=644](http://localhost:3000/?userId=644)
+3. Download the ical file for the absences of employees given the start and end dates. \
+![http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01](http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01)
+4. Download the ics(ical version default) or vcs(Outlook version) file given the format. \
+![localhost:3000/?format=vcs](localhost:3000/?format=vcs)
 
-Whenever you're done please zip the project and send it to: 
-challenge@crewmeister.com. If that doesn't work, please upload
-the zip file to a cloud service of your liking, such as GoogleDrive, Dropbox
-or OneDrive, and send us the link.
-
-We'll review your submission as soon as possible. Key-points we're going
-to review:
-
-- naming
-- tests
-- duplications
-- code consistency
-- function lengths
-- commits + commit messages
-- clean code
-
-An essential part of the challenge is also coming up with your own solutions and making reasonable assumptions about the implementation of the acceptance criteria.
- 
-# Scenario
-
-At crewmeister one of our products is the absence manager. With this product 
-company owners can manage sickness and vacations of employees. Some of our 
-customers want to export their employees absences to outlook. To make our 
-customers happy we decided to provide an iCal export. 
-https://en.wikipedia.org/wiki/ICalendar 
-
-## User Story
-
-As owner of a crew I want to be able to export my employees absences so 
-that I can import them into outlook.
 
 ## Acceptance Criteria
 
