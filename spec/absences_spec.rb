@@ -1,8 +1,32 @@
-require_relative '../cm_challenge/absences'
+require_relative '../app/models/absences'
 
 require 'icalendar'
 
 RSpec.describe 'Absences' do
+
+  describe '#initialize' do
+    subject(:s1) {CmChallenge::Absences.new({userId:644}).to_ical}
+    it 'has the absence data of Mike' do
+      expect(s1.events.first.dtstart.to_s).to eq("2017-01-13")
+      expect(s1.events.first.dtend.to_s).to eq("2017-01-13")
+      expect(s1.events.first.summary).to eq("Mike is sick.")
+    end
+    subject(:s2) {CmChallenge::Absences.new({startDate:"2017-01-01", endDate: "2017-02-01"}).to_ical}
+    it 'has absences only in between the given dates' do
+      s2.events do |e|
+        expect(e.dtstart.to_s).to be > "20170101"
+        expect(e.dtend.to_s).to be > "20170201"
+        expect(e.dtend.to_s).to be >= e.dtstart.to_s
+      end
+    end
+    subject(:s3) {CmChallenge::Absences.new({userId:644, startDate:"2017-01-01", endDate: "2017-02-01"}).to_ical}
+    it 'can take both user id and dates as parmeters' do
+      expect(s1.events.first.dtstart.to_s).to eq("2017-01-13")
+      expect(s1.events.first.dtend.to_s).to eq("2017-01-13")
+      expect(s1.events.first.summary).to eq("Mike is sick.")
+    end
+  end
+
   describe '#to_ical' do
     subject {CmChallenge::Absences.new.to_ical}
 
@@ -32,5 +56,6 @@ RSpec.describe 'Absences' do
       expect(subject.events.last.summary).to eq("Manuel is on vacation.")
       
     end
+
   end    
 end
