@@ -1,11 +1,21 @@
-# Abstract
+# Summary
 
 - I have implemented the backend(ruby) part of the coding challenge.
 - I have also built a rails app for the 3 bonus acceptance criteria. 
-- The backend code along with the tests can be found in the ```ruby_edition``` directory. To run the tests type ```bundle exec rspec```
+- I have used the git version control to maintain the code. All the code was initially pushed to the ```develop``` branch and then later merged to master.
+- The backend code along with the tests can be found in the ```ruby_edition``` directory. To run the tests type ```bundle exec rspec```.
 - The rails app can be found in the ```rails-app``` directory. Inside the directory, run the server using ```rails s``` and run the tests using ```bundle exec rspec```.
-- Only the last bonus feature (of doing it in js)has not been implemnted.
-- I have also implemented one extra feature:- Downloading the file in either vcs or ics format.
+- Since the rails-app contains mainly the standard boilerplate code, the main files to check are in ```app/models```, ```app/controllers``` and the tests in ```spec/```. 
+- Only the last bonus feature (of doing it in js)has not been implemented.
+- I have also implemented one extra feature:- Downloading the file in either vcs(Outlook version) or ics(ical version) format.
+
+## Clean Code
+- Followed the clean code practices.
+- Used snake_case naming style for function names and CamelCase for class names. 
+- Variable names and function names are self-explanatory and appropriate comments are added when needed.
+- No function exceed 25 lines.
+- The code is indented with 2 spaces.
+- Modular code: Each class in separate file and test for each class in separate files.
 
  ## Features of Rails app
 
@@ -16,7 +26,7 @@
 3. Download the ical file for the absences of employees given the start and end dates. \
 [http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01](http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01)
 4. Download the ics(ical version default) or vcs(Outlook version) file given the format. \
-[localhost:3000/?format=vcs](localhost:3000/)
+[localhost:3000/?format=vcs](localhost:3000/?format=vcs)
 
 
 ## Acceptance Criteria
