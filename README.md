@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This directory contains the Rails app for the absence manager.
 
-Things you may want to cover:
+## Features
+1. Download the ical file for the absences of all employees by going to \
+[localhost:3000/](localhost:3000/).
+2. Download the ical file for the absences of particular employee given the userId. \
+[http://localhost:3000/?userId=644](http://localhost:3000/?userId=644)
+3. Download the ical file for the absences of employees given the start and end dates. \
+[http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01](http://localhost:3000/?startDate=2017-01-01&endDate=2017-02-01)
+4. Download the ics(ical version default) or vcs(Outlook version) file given the format. \
+[localhost:3000/?format=vcs](localhost:3000/)
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+1. Install Ruby 
+2. ``` gem install bundler ```
+3. ``` bundle install ```
 
-* Configuration
+## Run Rails App
+1. ``` rails s ```
+2. Write Url Queries
+3. Download ical file
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running Specs
+1. ``` bundle exec spec ``` or ``` bundle guard spec ```
